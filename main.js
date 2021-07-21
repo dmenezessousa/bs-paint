@@ -74,34 +74,43 @@ while (count <= gridWidth * gridWidth) {
 
 //=========================================================================================
 
-//get Elements from HTML.
+//get the element used for the pallete colors.
 const colorPalettes = document.querySelectorAll(".palette-color");
+//get the element used for the brush.
 const brush = document.querySelector(".current-brush");
+//get the space which ill be using to paint on.
 const canvas = document.querySelectorAll(".square"); 
 
 //set brush color to be the same as the one picked from the pallete color.
 const colorPicker = function(){
+    //set palleteColor to be the color class that was clicked on.
     const palleteColor = this.classList[1];
+    //get the brush color class and set to brushColor.
     const brushColor = brush.classList[1];
+    // replace brush second class with one of the colors classes from the pallete color.
     brush.classList.replace(brushColor,palleteColor);
 }
 
-//loop through the colors elements and use whichever was clicked on.
+//loop through the color classes.
 for (const palette of colorPalettes){
   palette.addEventListener('click',colorPicker);
 }
 
-const draw = function(){
+const paint = function(){
   const pixelColor = this.classList[1];
   const brushColor = brush.classList[1];
   this.classList.replace(pixelColor,brushColor);
 }
 
-const drawOver = function(){
+// for(const eachPixel of canvas){
+//   eachPixel.addEventListener('click',paint);
+// }
+
+const paintOver = function(){
   if(mouseDown){
   const pixelColor = this.classList[1];
-  const bruh = brush.classList[1];
-  this.classList.replace(pixelColor,bruh);
+  const brushColor = brush.classList[1];
+  this.classList.replace(pixelColor,brushColor);
   }
 }
 
@@ -112,7 +121,7 @@ document.body.addEventListener("mousedown",() => {mouseDown = true;});
 document.body.addEventListener("mouseup",() => {mouseDown = false;});
 
 for(const eachPixel of canvas){
-  eachPixel.addEventListener('mouseenter',drawOver);
-  eachPixel.addEventListener('click',draw);
+  eachPixel.addEventListener('mouseenter',paintOver);
+  eachPixel.addEventListener('click',paint);
 }
 
