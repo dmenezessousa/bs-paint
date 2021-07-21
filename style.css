@@ -1,25 +1,49 @@
+body{
+  background-image: url(sky.jpg) ;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
 .app {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   height: 500px;
 }
 
 .headings {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-size: 25px;
 }
 
 .brush-selection {
   height: 70px;
   display: flex;
+  padding: 20px;
+  flex-direction:column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .paint {
   height: 250px;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .palette {
   display: flex;
   margin-left: -30px;
+  cursor: pointer;
 }
 
 .brush {
@@ -27,23 +51,24 @@
 }
 
 .icon {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 }
 
 .current-brush, .palette-color {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border: 1px solid black;
 }
 
 .canvas {
   display: grid;
-  grid-template-rows: repeat(10, 1fr);
-  grid-template-columns: repeat(10, 1fr);
-  height: 300px;
-  width: 300px;
+  grid-template-rows: repeat(20, 1fr);
+  grid-template-columns: repeat(20, 1fr);
+  height: 500px;
+  width: 500px;
   border: 1px solid black;
+  cursor: pointer;
 }
 
 .square {
@@ -51,21 +76,21 @@
 }
 
 .color-1 {
-
+  background-color: lightblue;
 }
 
 .color-2 {
-
+  background-color: orange;
 }
 
 .color-3 {
-
+  background-color: lightgreen;
 }
 
 .color-4 {
-
+  background-color: yellow;
 }
 
 .color-5 {
-
+  background-color: white;
 }

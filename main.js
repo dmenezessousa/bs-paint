@@ -15,7 +15,7 @@
  * To make the second one happen, the number to change
  * is the first argument to `repeat`, currently set at 10.
  */
-const gridWidth = 10;
+const gridWidth = 20;
 let count = 0;
 while (count <= gridWidth * gridWidth) {
   const canvas = document.querySelector('.canvas');
@@ -71,3 +71,48 @@ while (count <= gridWidth * gridWidth) {
 // You'll need to add the appropriate event listener for each
 // square and for each palette color from the functions you
 // wrote above.
+
+//=========================================================================================
+
+//get Elements from HTML.
+const colorPalettes = document.querySelectorAll(".palette-color");
+const brush = document.querySelector(".current-brush");
+const canvas = document.querySelectorAll(".square"); 
+
+//set brush color to be the same as the one picked from the pallete color.
+const colorPicker = function(){
+    const palleteColor = this.classList[1];
+    const brushColor = brush.classList[1];
+    brush.classList.replace(brushColor,palleteColor);
+}
+
+//loop through the colors elements and use whichever was clicked on.
+for (const palette of colorPalettes){
+  palette.addEventListener('click',colorPicker);
+}
+
+const draw = function(){
+  const pixelColor = this.classList[1];
+  const brushColor = brush.classList[1];
+  this.classList.replace(pixelColor,brushColor);
+}
+
+const drawOver = function(){
+  if(mouseDown){
+  const pixelColor = this.classList[1];
+  const bruh = brush.classList[1];
+  this.classList.replace(pixelColor,bruh);
+  }
+}
+
+//========================================================================
+
+let mouseDown = false;
+document.body.addEventListener("mousedown",() => {mouseDown = true;});
+document.body.addEventListener("mouseup",() => {mouseDown = false;});
+
+for(const eachPixel of canvas){
+  eachPixel.addEventListener('mouseenter',drawOver);
+  eachPixel.addEventListener('click',draw);
+}
+
