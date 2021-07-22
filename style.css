@@ -44,6 +44,7 @@ body{
   display: flex;
   margin-left: -30px;
   cursor: pointer;
+  margin-bottom: 5px;
 }
 
 .brush {
@@ -59,6 +60,7 @@ body{
   width: 40px;
   height: 40px;
   border: 1px solid black;
+  border-radius: 5px;
 }
 
 .canvas {
@@ -69,6 +71,7 @@ body{
   width: 500px;
   border: 1px solid black;
   cursor: pointer;
+  margin-top: 5px;
 }
 
 .square {
@@ -93,4 +96,23 @@ body{
 
 .color-5 {
   background-color: white;
+}
+.color-6 {
+  background-color: red;
+}
+.color-7 {
+  background-color: pink;
+}
+.color-8 {
+  background-color: blue;
+}
+.color-9 {
+  background-color: green;
+}
+.color-10 {
+  background-color: purple;
+}
+
+div.palette-color{
+  border-radius: 20px;
 }

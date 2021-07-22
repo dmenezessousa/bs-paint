@@ -85,7 +85,7 @@ const canvas = document.querySelectorAll(".square");
 const colorPicker = function(){
     //set palleteColor to be the color class that was clicked on.
     const palleteColor = this.classList[1];
-    //get the brush color class and set to brushColor.
+    //get the brush, color class = 'color-5' and set it to brushColor variable.
     const brushColor = brush.classList[1];
     // replace brush second class with one of the colors classes from the pallete color.
     brush.classList.replace(brushColor,palleteColor);
